@@ -4,6 +4,15 @@ import ListGroup from "react-bootstrap/ListGroup";
 import { useEffect, useState } from "react";
 
 const cards = ({ person }) => {
+  const url = "https://api.github.com/users/mojombo/followers";
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+
+  const fetchUsers = async () => {
+    const response = await fetch();
+    const data = await response.json;
+  };
   return (
     <Card className="my-3 p-3 rounded">
       <a href={`/person/${person.id}`}>
