@@ -36,8 +36,8 @@ const Cards = ({ person }) => {
           </Card.Title>
         </a>
         <ListGroup variant="flush">
-          <ListGroup.Item>{followers}</ListGroup.Item>
-          <ListGroup.Item>{repos}</ListGroup.Item>
+          <ListGroup.Item>followers: {followers}</ListGroup.Item>
+          <ListGroup.Item>Repos: {repos}</ListGroup.Item>
         </ListGroup>
       </Card.Body>
     </Card>
