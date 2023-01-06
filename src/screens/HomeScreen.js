@@ -8,7 +8,7 @@ const HomeScreen = () => {
     <>
       <Row>
         {data.map((person) => (
-          <Col sm={12} md={6} lg={4} xl={3}>
+          <Col sm={12} md={6} lg={6} xl={3}>
             <Cards person={person} />
           </Col>
         ))}
