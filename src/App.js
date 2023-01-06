@@ -1,5 +1,6 @@
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Footer from "./components/footer";
+import HomeScreen from "./screens/HomeScreen";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <main>
         <Container>
           <h1>List of GitHub Users</h1>
+          <HomeScreen />
         </Container>
       </main>
 
