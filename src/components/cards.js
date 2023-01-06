@@ -7,6 +7,7 @@ import axios from "axios";
 const Cards = ({ person }) => {
   const [followers, setFollowers] = useState("0");
   const [repos, setRepos] = useState("0");
+  const [organisation, setOrganisation] = useState("");
 
   useEffect(() => {
     fetchUsers();
@@ -18,9 +19,14 @@ const Cards = ({ person }) => {
       setFollowers(response.data.length);
     });
 
-    axios.get(person.repos_url).then((response) => {
+    axios.get(person.organizations_url).then((response) => {
       console.log(response.data);
       setRepos(response.data.length);
+    });
+
+    axios.get(person.followers_url).then((response) => {
+      console.log(response.data);
+      setOrganisation(response.data.length);
     });
   };
   return (
@@ -36,6 +42,7 @@ const Cards = ({ person }) => {
           </Card.Title>
         </a>
         <ListGroup variant="flush">
+          <ListGroup.Item>Organisation: {organisation}</ListGroup.Item>
           <ListGroup.Item>followers: {followers}</ListGroup.Item>
           <ListGroup.Item>Repos: {repos}</ListGroup.Item>
         </ListGroup>
